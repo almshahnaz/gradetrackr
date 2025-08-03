@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA & Grade Calculators</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" id="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+            </svg>GradeTrackr</a>
+            
+            <div class="navbar-toggler" id="navbar-toggle">
+                <span class="bar first"></span>
+                <span class="bar second"></span>
+                <span class="bar third"></span>
+            </div>    
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a class="navbar-links" href="index.html">Grade Calculator</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-links" href="gpa.html">GPA Calculator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 id="grade-title">Calculate Grade</h1>
+    <table id="grade-table">
+            <thead>
+                <tr>
+                    <th scope="col">Assignment</th>
+                    <th scope="col">Grade %</th>
+                    <th scope="col">Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="assignment-input" name="row1-assignment" id="row1-assignment" placeholder="eg. Quiz"></td>
+                    <td><input type="number" class="grade-input" name="row1-grade" id="row1-grade" min="0" max="100" step="0.1"></td>
+                    <td><input type="number" class="weight-input" name="row1-weight" id="row1-weight" min="0" max="100" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="assignment-input" name="row2-assignment" id="row2-assignment"></td>
+                    <td><input type="number" class="grade-input" name="row2-grade" id="row2-grade" min="0" max="100" step="0.1"></td>
+                    <td><input type="number" class="weight-input" name="row2-weight" id="row2-weight" min="0" max="100" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="assignment-input" name="row3-assignment" id="row3-assignment"></td>
+                    <td><input type="number" class="grade-input" name="row3-grade" id="row3-grade" min="0" max="100" step="0.1"></td>
+                    <td><input type="number" class="weight-input" name="row3-weight" id="row3-weight" min="0" max="100" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="assignment-input" name="row4-assignment" id="row4-assignment"></td>
+                    <td><input type="number" class="grade-input" name="row4-grade" id="row4-grade" min="0" max="100" step="0.1"></td>
+                    <td><input type="number" class="weight-input" name="row4-weight" id="row4-weight" min="0" max="100" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="assignment-input" name="row5-assignment" id="row5-assignment"></td>
+                    <td><input type="number" class="grade-input" name="row5-grade" id="row5-grade" min="0" max="100" step="0.1"></td>
+                    <td><input type="number" class="weight-input" name="row5-weight" id="row5-weight" min="0" max="100" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="assignment-input" name="row6-assignment" id="row6-assignment"></td>
+                    <td><input type="number" class="grade-input" name="row6-grade" id="row6-grade" min="0" max="100" step="0.1"></td>
+                    <td><input type="number" class="weight-input" name="row6-weight" id="row6-weight" min="0" max="100" step="0.1"></td>
+                </tr>
+            </tbody>
+    </table>
+    <div class="btn-container">
+        <button id="add-row">+ Add Row</button>
+        <button id="get-grade">Calculate</button>
+        
+    </div>
+
+    <div class="final-container">
+        <h2 id="final-heading">Grade Needed on the Final</h2>
+        
+            <label for="current-grade">Current Grade</label>
+            <input type="number" class="final" name="current-grade" id="current-grade">
+            
+            <label for="target-grade">Target Grade</label>
+            <input type="number" class="final" name="target-grade" id="target-grade">
+            
+            <label for="final-weight">Final Weight</label>
+            <input type="number" class="final" name="final-weight" id="final-weight">
+        
+            <button id="get-final">Calculate Final Grade Needed</button>
+        
+    </div>
+    <footer>
+        <p>
+            © 2025 GradeTrackr |
+            <a href="#grade-title">Back to Top</a> |
+            <a href="">GitHub</a>
+        </p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
